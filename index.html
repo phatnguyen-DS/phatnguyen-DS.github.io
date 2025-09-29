@@ -1,170 +1,295 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Phat Nguyen — CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --accent:#1e4fa4;
-      --muted:#6b6b6b;
-      --bg:#ffffff;
-      --card:#f7f7f7;
-      --maxw:980px;
-      font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
-    }
-    *{box-sizing:border-box}
-    body{
-      background:linear-gradient(135deg,#e0f7fa 0%,#f1f8ff 100%);
-      color:#222;margin:32px;display:flex;justify-content:center;min-height:100vh;
-    }
-    .container{width:100%;max-width:var(--maxw);background:var(--bg);box-shadow:0 8px 30px rgba(20,20,20,0.08);display:grid;grid-template-columns:300px 1fr;gap:32px;padding:36px;border-radius:16px;backdrop-filter:blur(4px)}
-    .sidebar{padding:10px}
-    .photo{width:100%;height:260px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .photo img{width:100%;height:100%;object-fit:cover;border-radius:12px}
-    h1{margin:0;font-size:28px;color:#111}
-    .role{color:var(--muted);margin-top:4px;font-weight:600}
-    .contact{margin-top:18px;font-size:14px}
-    .contact a{color:var(--accent);text-decoration:none}
-    .section{margin-top:22px}
-    .section h3{font-size:14px;margin:0 0 10px 0;color:var(--accent);letter-spacing:0.6px}
-    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:var(--card);padding:6px 10px;border-radius:6px;font-size:13px;color:#222;transition:all 0.3s ease}
-    .skill:hover{background:var(--accent);color:#fff}
-    .small{font-size:13px;color:var(--muted)}
-    .main{padding:6px 8px}
-    .section-block{padding:12px 0;border-bottom:1px solid #efefef}
-    .section-block:last-child{border-bottom:none}
-    .title-row{display:flex;justify-content:space-between;align-items:center}
-    .role-title{font-weight:700;font-size:16px;color:var(--accent)}
-    .muted{color:var(--muted);font-size:13px}
-    .desc{margin-top:8px;font-size:14px;line-height:1.5;color:#222}
-    .project-list,.exp-list{display:flex;flex-direction:column;gap:12px}
-    .project a{color:var(--accent);text-decoration:none;font-weight:600}
-    @media(max-width:880px){.container{grid-template-columns:1fr;padding:20px}.photo{height:180px}}
-    @media print{body{margin:0;background:white}.container{box-shadow:none}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Tan Phat Nguyen</title>
+    <style>
+        /* Reset và font chữ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .position {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Sections chung */
+        section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4a6491;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        /* Career Objective */
+        .objective {
+            background-color: #f9f9f9;
+        }
+
+        /* Experience & Education */
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .company, .school {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .project-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .github-link {
+            color: #4a6491;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #4a6491;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <aside class="sidebar">
-      <div class="photo" aria-hidden="true">
-        <img src="source355x388_ar.jpg" alt="Profile photo of Phat Nguyen">
-      </div>
-      <div style="margin-top:14px">
-        <h1>Nguyen Tan Phat</h1>
-        <div class="role">Data Scientist/ AI Engineer Intern</div>
-      </div>
-      <div class="contact small" style="margin-top:12px">
-        <div><strong>Phone:</strong> <a href="tel:+84333786257">0333786257</a></div>
-        <div><strong>Email:</strong> <a href="mailto:tanphat6406@gmail.com">tanphat6406@gmail.com</a></div>
-        <div><strong>Location:</strong> Hoa Cuong, Da Nang</div>
-        <div style="margin-top:6px"><strong>GitHub:</strong> <a href="https://github.com/phatnguyen-DS" target="_blank" rel="noopener">github.com/phatnguyen-DS</a></div>
-      </div>
-      <div class="section">
-        <h3>Skills</h3>
-        <div class="skill-list">
-          <div class="skill">Python</div>
-          <div class="skill">SQL</div>
-          <div class="skill">Pandas</div>
-          <div class="skill">NumPy</div>
-          <div class="skill">scikit-learn</div>
-          <div class="skill">PyTorch</div>
-          <div class="skill">Hugging Face</div>
-          <div class="skill">Git</div>
-          <div class="skill">Docker</div>
-          <div class="skill">AWS</div>
-        </div>
-      </div>
-      <div class="section">
-        <h3>Certificates</h3>
-        <div class="small">2025 — SQL Advanced (HackerRank)</div>
-        <div class="small">2024 — Learning Data Analytics (LinkedIn)</div>
-      </div>
-      <div class="section">
-        <h3>Languages</h3>
-        <div class="small">Vietnamese </div>
-        <div class="small">English </div>
-      </div>
-    </aside>
-
-    <main class="main">
-      <section class="section-block">
-        <div class="title-row">
-          <div><div class="role-title">SUMMARY</div></div>
-        </div>
-        <p class="desc">MIS student with passion for data and AI. Aspiring to apply knowledge and enthusiasm to create value for businesses, develop strong data analysis and problem-solving skills. Aiming for a Data Scientist / AI Engineer role capable of deploying data-driven solutions for decision making.</p>
-      </section>
-
-      <section class="section-block">
-        <div class="title-row">
-          <div class="role-title">EDUCATION</div>
-          <div class="muted">2024 — 2028</div>
-        </div>
-        <div style="margin-top:10px">
-          <div><strong>University of Economics - The University of Danang</strong></div>
-          <div class="muted">Major: Management Information Systems (MIS)</div>
-          <ul class="desc" style="margin-top:6px">
-            <li>NIC x UDN + Coursera Scholarship from Google</li>
-            <li>Bright Scholarship by Children of Vietnam Organization</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section-block">
-        <div class="title-row">
-          <div class="role-title">EXPERIENCE</div>
-        </div>
-        <div class="exp-list" style="margin-top:10px">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div><strong>Machine Language Data Scientist Intern</strong><div class="muted">Springer Capital</div></div>
-              <div class="muted">07/2025 — 10/2025</div>
+    <div class="container">
+        <header>
+            <h1>TAN PHAT NGUYEN</h1>
+            <div class="position">Data Scientist/ AI Engineer Intern</div>
+            <div class="contact-info">
+                <div class="contact-item">📞 0333786257</div>
+                <div class="contact-item">✉️ tanphat6406@gmail.com</div>
+                <div class="contact-item">🔗 linkedin.com/in/phat-nguyen-a264722b7/</div>
+                <div class="contact-item">📍 53/54 2/9, Da Nang</div>
             </div>
-            <div class="desc">Processed and analyzed data to support LLM training; built pipelines and performed data quality evaluation.</div>
-          </div>
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div><strong>Data Analytics Intern</strong><div class="muted">AH LongQuan</div></div>
-              <div class="muted">10/2025 — 01/2026</div>
-            </div>
-            <div class="desc">Conducted data analysis to support decision-making; created visual reports and contributed to internal dashboards.</div>
-          </div>
-        </div>
-      </section>
+        </header>
 
-      <section class="section-block">
-        <div class="title-row">
-          <div class="role-title">PROJECTS</div>
-        </div>
-        <div class="project-list" style="margin-top:10px">
-          <div class="project">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div><a href="https://github.com/Phat-ops/customers_churn" target="_blank" rel="noopener">Customer Churn Prediction</a></div>
-              <div class="muted">07/2025 — 07/28/2025</div>
-            </div>
-            <div class="desc">Built a churn prediction model, analyzed key factors, and proposed retention strategies. Achieved ~85% accuracy on test set.</div>
-          </div>
-          <div class="project">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div><a href="https://github.com/Phat-ops/computer-vison-car-and-bike-images" target="_blank" rel="noopener">Image Classification (Motorbike & Car)</a></div>
-              <div class="muted">08/2025 — 09/2025</div>
-            </div>
-            <div class="desc">Implemented CNN model deployed with FastAPI and Docker. Achieved ~96% accuracy.</div>
-          </div>
-        </div>
-      </section>
+        <section class="objective">
+            <h2>CAREER OBJECTIVE</h2>
+            <p>As a Management Information Systems student with a passion for data and AI, I aspire to apply my knowledge and enthusiasm to create value for businesses. At the same time, I aim to develop my analytical skills, data-driven thinking, and practical experience, with the goal of becoming a Data Scientist capable of building data solutions to support decision-making.</p>
+        </section>
 
-      <section class="section-block">
-        <div class="title-row">
-          <div class="role-title">ACTIVITIES &amp; RESEARCH</div>
-          <div class="muted">08/2025 — 05/2026</div>
-        </div>
-        <div class="desc">Participated in research group, supported data collection and analysis for papers and internal applications.</div>
-      </section>
+        <section class="experience">
+            <h2>EXPERIENCE</h2>
+            
+            <div class="experience-item">
+                <h3>Data Scientist Intern</h3>
+                <div class="company">Springer Capital</div>
+                <div class="date">07/2025 - 10/2025</div>
+                <p>Processed and analyzed datasets to support Large Language Model (LLM) training and evaluation.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Data Analytics</h3>
+                <div class="company">AH LongQuan</div>
+                <div class="date">07/2025 - 10/01/2026</div>
+                <p>Processed and analyzed datasets to support Large Language Model (LLM) training and evaluation.</p>
+            </div>
+        </section>
 
-    </main>
-  </div>
+        <section class="education">
+            <h2>EDUCATION</h2>
+            
+            <div class="education-item">
+                <h3>UNIVERSITY OF ECONOMICS - THE UNIVERSITY OF DANANG</h3>
+                <div class="school">Major: Management Information Systems (MIS)</div>
+                <ul>
+                    <li>NIC x UDN + Coursera Scholarship from Google</li>
+                    <li>Bright Scholarship by Children of Vietnam Organization</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>PERSONAL PROJECTS</h2>
+            
+            <div class="project-item">
+                <div class="project-title">
+                    <h3>CUSTOMERS CHURN ANALYSIS AND PREDICTION</h3>
+                    <div class="date">07/2025 - 08/2025</div>
+                </div>
+                <a href="https://github.com/Phat-ops/Customers_churn_analysis_prediction" class="github-link">Github: github.com/Phat-ops/Customers_churn_analysis_prediction</a>
+                <p>Built a customer behavior analysis model to identify factors leading to churn and provided recommendations to reduce it; combined with a Machine Learning model to predict customers at risk of churn, enabling proactive customer engagement. Achieved approximately 85% prediction accuracy.</p>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">
+                    <h3>IMAGE CLASSIFICATION</h3>
+                    <div class="date">08/2025 - 09/2025</div>
+                </div>
+                <a href="https://github.com/Phat-ops/Car-and-bike-images-classification" class="github-link">Github: github.com/Phat-ops/Car-and-bike-images-classification</a>
+                <p>Image classification model for motorcycles and cars based on a CNN architecture, deployed using FastAPI and Docker. The model achieves an accuracy of approximately 96%.</p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>SKILLS</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Language:</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Library:</h3>
+                    <ul class="skill-list">
+                        <li>Pandas</li>
+                        <li>Numpy</li>
+                        <li>Scikit-learn</li>
+                        <li>Matplotlib</li>
+                        <li>Pytorch</li>
+                        <li>Hugging Face</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools:</h3>
+                    <ul class="skill-list">
+                        <li>Git/Github</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Linux</li>
+                        <li>BI</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© Joboko.com</p>
+        </footer>
+    </div>
 </body>
 </html>
